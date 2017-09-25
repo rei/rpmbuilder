@@ -11,6 +11,8 @@ WORKDIR /home/rpmbuilder
 
 COPY config/*.sh ./
 
+RUN chown rpmbuilder *.sh 
+
 USER rpmbuilder
 
 RUN mkdir -p rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}

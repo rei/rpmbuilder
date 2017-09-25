@@ -9,14 +9,13 @@
     docker build -t rpmbuilder-centos:latest -f Dockerfile-centos .
 
 
-<br><br><br>
+<br><br>
 
 
 ## Building RPMs using the container image
-Using any of the methods below should produce .rpms in the rpms/ directory
+Using any of the methods below should produce a .rpm in the rpms/ directory
 
 #### Build Netdata for amazonlinux
-* Note the netdata git tag is passed as an environment variable, and consumed by the netdata.sh script
 ```
 docker run --rm -v $PWD/rpms:/home/rpmbuilder/rpmbuild/RPMS/x86_64:Z --name rpmbuilder rpmbuilder-amazonlinux:latest ./netdata.sh
 
@@ -25,7 +24,6 @@ docker run --rm -v $PWD/rpms:/home/rpmbuilder/rpmbuild/RPMS/x86_64:Z --name rpmb
 ```
 
 #### Build Netdata for CentOS/RHEL7
-* Note the netdata git tag is passed as an environment variable, and consumed by the netdata.sh script
 ```
 docker run --rm -v $PWD/rpms:/home/rpmbuilder/rpmbuild/RPMS/x86_64:Z --name rpmbuilder rpmbuilder-centos:latest ./netdata.sh
 
