@@ -1,0 +1,16 @@
+FROM centos:latest
+
+LABEL maintainer="ntade@rei.com"
+
+RUN yum upgrade -q -y && yum install -q -y \
+    git autoconf automake gcc zlib-devel libuuid-devel bzip2 rpm-build make
+
+RUN groupadd -g 1000 rpmbuilder && useradd -g rpmbuilder -u 1000 rpmbuilder
+
+WORKDIR /home/rpmbuilder
+
+COPY config/*.sh ./
+
+USER rpmbuilder
+
+RUN mkdir -p rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
