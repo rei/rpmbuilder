@@ -1,4 +1,4 @@
-# Simple container to build RPMs. Multiple Dockerfiles included to support multiple architectures.
+# Simple container to build RPMs. Multiple Dockerfiles included to support multiple platforms.
 
 ## Building the docker containers
 
