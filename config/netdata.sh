@@ -7,7 +7,8 @@ cd netdata
 autoreconf -ivf
 ./configure && make dist
 /bin/cp -f netdata-*.tar.xz netdata.spec ~/rpmbuild/SOURCES/
-rpmbuild -bb ~/rpmbuild/SOURCES/netdata.spec --without nfacct
+#rpmbuild -bb ~/rpmbuild/SOURCES/netdata.spec --without nfacct
+rpmbuild -bb ~/rpmbuild/SOURCES/netdata.spec
 
 # TODO: sign RPM, upload to s3 automagically
 # gpg2 --export-secret-keys --armor your@email.com
