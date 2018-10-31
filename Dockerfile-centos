@@ -3,7 +3,8 @@ FROM centos:latest
 LABEL maintainer="ntade@rei.com"
 
 RUN yum upgrade -q -y && yum install -q -y \
-    git autoconf automake gcc zlib-devel libuuid-devel bzip2 rpm-build make
+    git autoconf automake gcc zlib-devel libuuid-devel bzip2 rpm-build libtool check check-devel scons \
+    rpm-build redhat-rpm-config yum-utils curl libmnl-devel make pkgconfig zlib-devel
 
 RUN groupadd -g 1000 rpmbuilder && useradd -g rpmbuilder -u 1000 rpmbuilder
 
